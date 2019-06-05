@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+   #h{
+   color: #C03505;
+   font-size: 40px;
+   font-weight: bold;
+   font-family: Calibri;
+   font-style : normal;}
+   
+   #h1{
+   color: #054C65;
+   font-size: 12px;
+   font-weight: bold;
+   font-family: Calibri;
+   font-style : normal;}
+   
+   #h2{
+   color: #408B72;
+   font-size: 25px;
+   font-weight: bold;
+   font-family: Calibri;
+   font-style : normal;}
+   
+   #h3{
+   color: #054C65;
+   font-size: 25px;
+   font-weight: bold;
+   font-family: Calibri;
+   font-style : normal;}
+   
+   #h4{
+   color: #000000;
+   font-size: 18px;
+   font-weight: normal;
+   font-family: Calibri;
+   font-style : normal;}
+   
+   div{
+   padding: 10px 10px 300px 10px;
+   border: none;}
+   
+   input[type=text], input[type=date], input[type=number]{
+   width: 80%;
+   padding: 6px 10px 6px 5px;
+   margin: 2px 0;
+   box-sizing: border-box;
+   border: 2px solid #DEE4E5;
+   border-radius: 12px;
+   color: #000000;
+   font-size: 16px;
+   font-weight: 400;
+   font-family: Calibri;
+   font-style : normal;
+   } 
+    
+   input[type=text]:focus, input[type=date]:focus, input[type=date]:focus{
+   border: 3px solid #000000;}
+   
+   input[type=button], input[type=submit], input[type=reset]{
+   background-color: #DEE4E5;
+   border: none;
+   border-radius: 12px;
+   color: black;
+   padding: 16px 30px;
+   font-size: 14px;
+   font-weight: bold;
+   font-family: Calibri;
+   font-style : normal;
+   margin: 4px 2px;
+   cursor: pointer;}
+   
+   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
+   background-color: #45a049;}
+   
+ </style>
+
+<body>
+<div>
+
+<h id="h"> PT. SRITEX II </h>
+<br>
+<h id="h1"> Jl. KH Samanhudi, Sawah, Banmati, Kec. Sukoharjo, Kabupaten Sukoharjo, Jawa Tengah 57551 </h>
+<br><br>
+<h id="h2"> Departemen : Spinning 10 </h>
+<br><br>
+
+<input type="button" value="INPUT DATA OEE">
+<input type="button" value="CHECK DATA OEE">
+<br><br>
+    
+  <form action="/action_page.php">
+  <fieldset>
+  <legend>
+  <h id="h3"> INPUT DATA OEE </h>
+  </legend>
+  <br>
+
+<!-- tabel untuk input identitas oee nya-->
+  <table>
+      <tr>
+             <td><h id="h4">Tanggal</h></td>
+             <td>
+             : <input type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
+             </td>
+      </tr>
+      <tr>
+             <td><h id="h4">ID Mesin</h></td>
+             <td>
+             : <input type="text" name="ID_Mesin" placeholder="RF001" required>
+             </td>
+      </tr>
+      <tr>
+             <td><h id="h4">ID Lot</h></td>
+             <td>
+             : <input type="text" name="ID_Lot" placeholder="12R101087" required>
+             </td>
+      </tr>
+  </table>
+  <br><br>
+
+<!-- tabel untuk input isi oee nya-->
+  <table>
+      <tr>
+             <td><h id="h4">Planned Stop</h></td>
+             <td>
+             : <input type="number" name="Planned_Stop" placeholder="1440" min="0" max="1440" required>
+             <h id="h4"> min </h>
+             </td>
+      </tr>
+      <tr>
+             <td><h id="h4">Unplanned Stop</h></td>
+             <td>
+             : <input type="number" name="Unplanned_Stop" placeholder="1440" min="0" max="1440" required>
+             <h id="h4"> min </h>
+             </td>
+      </tr>
+      <tr>
+             <td><h id="h4">Processed Amount</h></td>
+             <td>
+             : <input type="number" name="Processed_Amount" placeholder="1234" min="0" required>
+             <h id="h4"> kg </h>
+             </td>
+      </tr>
+      <tr>
+             <td><h id="h4">Defect Amount</h></td>
+             <td>
+             : <input type="number" name="Defect Amount" placeholder="1234" min="0" required>
+             <h id="h4"> kg </h>
+             </td>
+      </tr>
+  </table>
+  
+  
+  <br>
+  <input type="submit" value="SUBMIT">
+  <input type="reset" value="RESET">
+  
+
+  
+</fieldset>
+</form> 
+</div>
+</body>
+</html>
