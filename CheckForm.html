@@ -57,7 +57,7 @@
    padding: 10px 10px 300px 10px;
    border: none;}
    
-   input[type=text], input[type=date], input[type=number]{
+   input[type=text], input[type=date], input[type=number], input[list=Jenis_Mesin]{
    width: 80%;
    padding: 6px 10px 6px 5px;
    margin: 2px 0;
@@ -71,7 +71,7 @@
    font-style : normal;
    } 
     
-   input[type=text]:focus, input[type=date]:focus, input[type=number]:focus{
+   input[type=text]:focus, input[type=date]:focus, input[type=number]:focus, input[list=Jenis_Mesin]:focus{
    border: 3px solid #000000;}
    
    input[type=button], input[type=submit], input[type=reset]{
@@ -105,78 +105,52 @@
 <br><br>
 
 <input type="button" value="INPUT DATA OEE">
-<br>
+<br><br>
 
 <h id="h5">CHECK DATA OEE</h>
-<input type="button" value="HARIAN">
-<input type="button" value="BULANAN">
 <br><br><br>
     
   <form method="POST" action="http://localhost:3000/form" target="blank">
+  
+<!-- masuk kolom fieldset-->  
   <fieldset>
   <legend>
-  <h id="h3"> INPUT DATA OEE </h>
+  <h id="h3"> CHECK DATA OEE HARIAN </h>
   </legend>
   <br>
 
 <!-- tabel untuk input identitas oee nya-->
   <table>
       <tr>
-             <td><h id="h4">Tanggal</h></td>
+             <td><h id="h4">Tanggal Awal</h></td>
              <td>
              : <input type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
              </td>
       </tr>
       <tr>
-             <td><h id="h4">ID Mesin</h></td>
+             <td><h id="h4">Tanggal Akhir</h></td>
              <td>
-             : <input type="text" name="ID_Mesin" placeholder="RF001" required>
+             : <input type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
              </td>
       </tr>
       <tr>
-             <td><h id="h4">ID Lot</h></td>
+             <td><h id="h4">Jenis Mesin</h></td>
              <td>
-             : <input type="text" name="ID_Lot" placeholder="12R101087" required>
-             </td>
-      </tr>
-  </table>
-  <br><br>
-
-<!-- tabel untuk input isi oee nya-->
-  <table>
-      <tr>
-             <td><h id="h4">Planned Stop</h></td>
-             <td>
-             : <input type="number" name="Planned_Stop" placeholder="1440" min="0" max="1440" required>
-             <h id="h4"> min </h>
-             </td>
-      </tr>
-      <tr>
-             <td><h id="h4">Unplanned Stop</h></td>
-             <td>
-             : <input type="number" name="Unplanned_Stop" placeholder="1440" min="0" max="1440" required>
-             <h id="h4"> min </h>
-             </td>
-      </tr>
-      <tr>
-             <td><h id="h4">Processed Amount</h></td>
-             <td>
-             : <input type="number" name="Processed_Amount" placeholder="1234" min="0" required>
-             <h id="h4"> kg </h>
-             </td>
-      </tr>
-      <tr>
-             <td><h id="h4">Defect Amount</h></td>
-             <td>
-             : <input type="number" name="Defect_Amount" placeholder="1234" min="0" required>
-             <h id="h4"> kg </h>
+             : <input list="Jenis_Mesin" name="Jenis_Mesin" placeholder="Carding" required />
+      		 <datalist id="Jenis_Mesin">
+    		 <option value="Carding">
+    		 <option value="Drawing">
+    		 <option value="Speed Frame">
+    		 <option value="Ring Frame">
+    		 <option value="Winding">
+             </datalist>
              </td>
       </tr>
   </table>
   
   
   <br>
-  <input type="submit" value="SUBMIT">
+  <input type="button" value="CHECK">
   <input type="reset" value="RESET">
   
 
