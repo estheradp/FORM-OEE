@@ -5,7 +5,7 @@
    #h{
    padding-left: 10px;
    color: #C03505;
-   font-size: 65px;
+   font-size: 60px;
    font-weight: bold;
    font-family: Calibri;
    font-style : normal;}
@@ -13,13 +13,13 @@
    #h1{
    padding-left: 90px;
    color: #054C65;
-   font-size: 14px;
+   font-size: 12px;
    font-weight: bold;
    font-family: Calibri;
-   font-style : italic;}
+   font-style : normal;}
    
    #h2{
-   padding-left: 17px;
+   padding-left: 5px;
    color: #408B72;
    font-size: 26px;
    font-weight: bold;
@@ -41,11 +41,10 @@
    font-style : normal;}
    
    #h5{
-   padding: 10px 23px;
-   box-sizing: border-box;
+   padding: 10px 30px;
    border: 2px solid #DEE4E5;
    border-radius: 12px;
-   color: #000000;
+   color: #0D4B3C;
    font-size: 15px;
    font-weight: bold;
    font-family: Calibri;
@@ -72,13 +71,15 @@
    } 
     
    input[type=text]:focus, input[type=date]:focus, input[type=number]:focus, input[list=Jenis_Mesin]:focus{
-   border: 3px solid #000000;}
+   border: 3px solid #8AE7D0;}
    
    input[type=button], input[type=submit], input[type=reset]{
+   width: 170px;
+   height: 40px;
    background-color: #DEE4E5;
    border: none;
    border-radius: 12px;
-   color: black;
+   color: #0D4B3C;
    padding: 10px 25px;
    font-size: 15px;
    font-weight: bold;
@@ -88,7 +89,8 @@
    cursor: pointer;}
    
    input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
-   background-color: #45a049;}
+   background-color: #8AE7D0;
+   color: #0D4B3C;}
    
  </style>
 
@@ -99,23 +101,31 @@
 
 <h id="h"> PT. SRITEX II </h>
 <br>
-<h id="h1"> Jl. KH Samanhudi, Sawah, Banmati, Kec. Sukoharjo, Kabupaten Sukoharjo, Jawa Tengah 57551 </h>
-<br><br>
-<h id="h2"> Departemen : Spinning 10</h>
+<h id="h1"> Jl. KH. Samanhudi Jetis, Sukoharjo 57511, Solo, Jawa Tengah, Indonesia <br>
+<h id="h1"> Telp : +62-271-593 188 <br>
+<h id="h1"> Fax : +62-271-593 488 <br>
+<h id="h1"> Email: cmo@sritex.co.id <br>
+<h id="h1"> Website: www.sritex.co.id </h>
+<br><br><br>
+
+<h id="h2"> Departemen: Spinning 10</h>
 <br><br>
 
 <input type="button" value="INPUT DATA OEE">
-<br><br>
+
 
 <h id="h5">CHECK DATA OEE</h>
-<br><br><br>
+
+    
+<input type="button" value="LAPORAN OEE">
+<br><br><br>    
     
   <form method="POST" action="http://localhost:3000/form" target="blank">
   
 <!-- masuk kolom fieldset-->  
   <fieldset>
   <legend>
-  <h id="h3"> CHECK DATA OEE HARIAN </h>
+  <h id="h3"> CHECK DATA OEE </h>
   </legend>
   <br>
 
