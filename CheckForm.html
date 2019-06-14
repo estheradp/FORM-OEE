@@ -134,19 +134,19 @@
       <tr>
              <td><h id="h4">Tanggal Awal</h></td>
              <td>
-             : <input type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
+             : <input id="firstDate" type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
              </td>
       </tr>
       <tr>
              <td><h id="h4">Tanggal Akhir</h></td>
              <td>
-             : <input type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
+             : <input id="lastDate" type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
              </td>
       </tr>
       <tr>
              <td><h id="h4">Jenis Mesin</h></td>
              <td>
-             : <input list="Jenis_Mesin" name="Jenis_Mesin" placeholder="Carding" required />
+             : <input id="machineType" list="Jenis_Mesin" name="Jenis_Mesin" placeholder="Carding" required />
       		 <datalist id="Jenis_Mesin">
     		 <option value="Carding">
     		 <option value="Drawing">
@@ -160,7 +160,7 @@
   
   
   <br>
-  <input type="button" value="CHECK">
+  <input type="button" value="CHECK" onclick="fetchData()">
   <input type="reset" value="RESET">
   
 
@@ -168,5 +168,18 @@
 </fieldset>
 </form> 
 </div>
+<script>
+  fetchData = () => {
+    const firstDate = document.getElementById('firstDate').value
+    const lastDate = document.getElementById('lastDate').value
+    const machineType = document.getElementById('machineType').value
+
+    fetch('http://localhost:3000?startDate='+firstDate+'&lastDate='+lastDate+'&machineType='+machineType)
+    .then((result)=>result.json())
+    .then((result)=>{
+      console.log(result)
+    })
+  }
+</script>
 </body>
 </html>
