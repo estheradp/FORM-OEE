@@ -177,7 +177,7 @@
     const lastDate = document.getElementById('lastDate').value
     const machineType = document.getElementById('machineType').value
 
-    fetch('http://localhost:3000?/form?startDate=' + firstDate + '&lastDate=' + lastDate + '&machineType=' + machineType)
+    fetch('http://localhost:3000/form?startDate=' + firstDate + '&lastDate=' + lastDate + '&machineType=' + machineType)
       .then((result) => result.json())
       .then((result) => {
         const tanggal = []
