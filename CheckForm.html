@@ -182,10 +182,12 @@
       .then((result) => {
         const tanggal = []
         const value = []
-        result.data.forEach(x=>{
-          tanggal.push(x.tanggal)
-          value.push(x.Mean_OEERate)
-        })
+
+        for(let a=0;a<result.data.length;a++){
+          tanggal.push(result.data[a].tanggal)
+          value.push(result.data[a].xMean_OEERate)
+        }
+
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
           type: 'bar',
