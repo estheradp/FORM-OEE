@@ -182,7 +182,10 @@
       .then((result) => {
         const tanggal = []
         const value = []
-        console.log(result.data)
+        console.log(result)
+        result.forEach(x=>{
+          console.log(x)
+        })
         // result.data.forEach(x=>{
         //   tanggal.push(x.tanggal)
         //   value.push(x.Mean_OEERate)
