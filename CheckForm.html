@@ -111,7 +111,7 @@
 <h id="h2"> Departemen: Spinning 10</h>
 <br><br>
 
-<input type="button" value="INPUT DATA OEE">
+<input type="button" value="INPUT DATA OEE" onclick="goToInput()">
 
 
 <h id="h5">CHECK DATA OEE</h>
@@ -179,6 +179,10 @@
     .then((result)=>{
       console.log(result)
     })
+  }
+
+  goToInput = () => {
+    window.location.href="index.html"
   }
 </script>
 </body>
