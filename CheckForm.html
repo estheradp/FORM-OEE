@@ -117,7 +117,7 @@
 <h id="h5">CHECK DATA OEE</h>
 
     
-<input type="button" value="LAPORAN OEE">
+
 <br><br><br>    
     
   <form method="POST" action="http://localhost:3000/form" target="blank">
@@ -182,6 +182,8 @@
       .then((result) => {
         const tanggal = []
         const value = []
+
+console.log(result)
 
         for(let a=0;a<result.data.length;a++){
           tanggal.push(result.data[a].tanggal)
