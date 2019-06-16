@@ -168,22 +168,68 @@
 </fieldset>
 </form> 
 </div>
+<canvas id="myChart"></canvas>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 <script>
   fetchData = () => {
     const firstDate = document.getElementById('firstDate').value
     const lastDate = document.getElementById('lastDate').value
     const machineType = document.getElementById('machineType').value
 
-    fetch('http://localhost:3000?startDate='+firstDate+'&lastDate='+lastDate+'&machineType='+machineType)
-    .then((result)=>result.json())
-    .then((result)=>{
-      console.log(result)
-    })
+    fetch('http://localhost:3000?startDate=' + firstDate + '&lastDate=' + lastDate + '&machineType=' + machineType)
+      .then((result) => result.json())
+      .then((result) => {
+        const tanggal = []
+        const value = []
+
+        result.data.forEach(x=>{
+          tanggal.push(x.tanggal)
+          value.push(x.Mean_OEERate)
+        })
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: tanggal,
+            datasets: [{
+              label: '# of Votes',
+              data: value,
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+      })
   }
 
   goToInput = () => {
-    window.location.href="index.html"
+    window.location.href = "index.html"
   }
+ 
 </script>
-</body>
 </html>
