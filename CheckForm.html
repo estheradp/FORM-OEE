@@ -134,13 +134,13 @@
       <tr>
              <td><h id="h4">Tanggal Awal</h></td>
              <td>
-             : <input id="firstDate" type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
+             : <input id="firstDate" type="date" data-date="" data-date-format="DD MM YYYY" name="firstDate" required>
              </td>
       </tr>
       <tr>
              <td><h id="h4">Tanggal Akhir</h></td>
              <td>
-             : <input id="lastDate" type="date" data-date="" data-date-format="DD MM YYYY" name="Tanggal" required>
+             : <input id="lastDate" type="date" data-date="" data-date-format="DD MM YYYY" name="lastDate" required>
              </td>
       </tr>
       <tr>
@@ -171,6 +171,7 @@
 <canvas id="myChart"></canvas>
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script>
   fetchData = () => {
     const firstDate = document.getElementById('firstDate').value
@@ -186,7 +187,7 @@
         console.log(result)
 
         for(let a=0;a<result.data.length;a++){
-          tanggal.push(result.data[a].Tanggal)
+          tanggal.push(moment(result.data[a].Tanggal).calendar())
           value.push(result.data[a].Mean_OEERate)
         }
 
